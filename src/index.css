@@ -1,13 +1,90 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @variants responsive {
+    .bg-height {
+      height: calc((100vw * 9 / 16));
+    }
+    .bg-height_xl {
+      height: 680px;
+    }
+  }
+
+  .active {
+    @apply text-blue-500 pointer-events-none;
+  }
+  .active::after {
+    /* content: "";
+    display: block;
+    position: absolute;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 9px solid white;
+    bottom: 0;
+    margin-bottom: -18px; */
+  }
+  .side_nav_active {
+    @apply text-blue-600 pointer-events-none;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+
+  border-bottom: 9px solid white;
+  margin-bottom: -18px;
+}
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-left: 9px solid black;
+
+  border-bottom: 9px solid transparent;
+}
+
+body {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+*,
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+#nav-bar {
+  z-index: 5000000;
+}
+
+#high_zindex {
+  z-index: 100000000000000000;
+}
+
+.bg-width {
+  width: 100%;
+  z-index: -1000;
+}
+
+.slider_button button.tns-nav-active {
+  background-color: white;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  border: 1px solid black;
 }
